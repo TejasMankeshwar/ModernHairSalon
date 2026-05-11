@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Salon & Academy | Hairdresser in Pune</title>
+    <meta name="description" content="At Modern Salon & Academy, we offer expert hair care and styling services in a luxurious, welcoming environment. Pune's premier Hair Academy.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Modern Salon</a>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Location</a></li>
+                <li><a href="tel:08080866944" class="btn">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Mobile Floating Action Button -->
+    <a href="tel:08080866944" class="floating-call-btn" aria-label="Call Now">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Experience Luxury Hair Care</h1>
+            <p>Expert hair styling in a welcoming, luxurious environment in Pune, Maharashtra.</p>
+            <a href="tel:08080866944" class="btn">Book Your Appointment <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-grid">
+            <div class="about-img-container reveal">
+                <img src="assets/about.png" alt="Professional hair stylist cutting hair" class="about-img">
+            </div>
+            <div class="about-text reveal">
+                <h2>From Modern Salon & Academy</h2>
+                <div class="rating-badge">
+                    <span class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span>4.9 (45 Reviews)</span>
+                </div>
+                <p>
+                    "At Modern Salon & Academy, we offer expert hair care and styling services in a luxurious, welcoming environment. Our certified stylists provide personalized haircuts, coloring, and treatments."
+                </p>
+                <p>
+                    "As a premier Hair Academy, we also train the next generation of professionals, combining education with hands-on experience for top-tier results."
+                </p>
+                <a href="tel:08080866944" class="btn btn-outline">Call Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Showcase Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our Expertise</h2>
+                <p style="color: var(--text-muted)">Precision haircuts, vibrant coloring, and academy training.</p>
+            </div>
+            
+            <div class="about-grid" style="align-items: center;">
+                <div class="about-text reveal" style="order: 2;">
+                    <h3>Creative Coloring & Styling</h3>
+                    <br>
+                    <p>We pride ourselves on using top-quality products to bring your hair vision to life. From subtle highlights to full vivid transformations, our certified stylists ensure beautiful, shiny, and healthy results.</p>
+                </div>
+                <div class="about-img-container reveal" style="order: 1;">
+                    <img src="assets/color.png" alt="Hair coloring process in luxury salon" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Carousel Section -->
+    <section class="locations-carousel" id="locations">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our Salon Locations</h2>
+                <p style="color: var(--text-muted)">Visit us at any of our 5 premium locations across Pune.</p>
+            </div>
+            
+            <div class="carousel-container reveal">
+                <div class="carousel-track">
+                    <!-- Slide 1: Sinhagad Road -->
+                    <div class="carousel-slide" data-location="sinhagad">
+                        <div class="slide-content">
+                            <img src="assets/location1.png" alt="Modern Hair Sinhagad Road Location">
+                            <div class="slide-overlay">
+                                <h3>Sinhagad Road</h3>
+                                <p>Luxury salon experience in the heart of Sinhagad Road.</p>
+                                <button class="visit-btn">Visit Location <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Goel Ganga -->
+                    <div class="carousel-slide" data-location="goelganga">
+                        <div class="slide-content">
+                            <img src="assets/location2.png" alt="Modern Hair Goel Ganga Location">
+                            <div class="slide-overlay">
+                                <h3>Goel Ganga</h3>
+                                <p>Sophisticated styling and premium care at Goel Ganga.</p>
+                                <button class="visit-btn">Visit Location <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Nanded City -->
+                    <div class="carousel-slide" data-location="nanded">
+                        <div class="slide-content">
+                            <img src="assets/location3.png" alt="Modern Hair Nanded City Location">
+                            <div class="slide-overlay">
+                                <h3>Nanded City</h3>
+                                <p>Modern aesthetics and expert stylists in Nanded City.</p>
+                                <button class="visit-btn">Visit Location <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Dattawadi -->
+                    <div class="carousel-slide" data-location="dattawadi">
+                        <div class="slide-content">
+                            <img src="assets/location4.png" alt="Modern Hair Dattawadi Location">
+                            <div class="slide-overlay">
+                                <h3>Dattawadi</h3>
+                                <p>Our signature flagship experience at Dattawadi.</p>
+                                <button class="visit-btn">Visit Location <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5: Karvenagar -->
+                    <div class="carousel-slide" data-location="karvenagar">
+                        <div class="slide-content">
+                            <img src="assets/location5.png" alt="Modern Hair Karvenagar Location">
+                            <div class="slide-overlay">
+                                <h3>Karvenagar</h3>
+                                <p>Boutique salon services and personalized care in Karvenagar.</p>
+                                <button class="visit-btn">Visit Location <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn prev-btn" aria-label="Previous Slide">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next-btn" aria-label="Next Slide">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>What Our Clients Say</h2>
+                <div class="stars" style="font-size: 1.5rem;">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p style="color: var(--text-muted); margin-top: 10px;">Based on 45 reviews from satisfied customers.</p>
+            </div>
+
+            <div class="reviews-grid reveal">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">V</div>
+                        <div class="reviewer-info">
+                            <h4>Vivek Potdar</h4>
+                            <div class="stars" style="font-size: 0.8rem;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Clean space, well-trained staff, and every service is done with precision."</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">S</div>
+                        <div class="reviewer-info">
+                            <h4>Suvani Kamble</h4>
+                            <div class="stars" style="font-size: 0.8rem;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"The people who work here are also very nice.❤️ TQ so much"</p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">S</div>
+                        <div class="reviewer-info">
+                            <h4>Sunita Karve</h4>
+                            <div class="stars" style="font-size: 0.8rem;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"It was nice experience staff is well trained and loved the haircut so much"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location -->
+    <section class="contact" id="contact">
+        <div class="container info-grid">
+            <div class="contact-info reveal">
+                <h2 style="font-size: 2.5rem; margin-bottom: 30px; font-family: var(--font-serif); color: var(--accent-color);">Visit Us</h2>
+                <div class="contact-card">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot contact-icon"></i>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p id="location-address">opp. Rohan Kritika, near Aditya Nakoda Bldg,<br>Sarita Vihar Phase 2, Dattawadi,<br>Pune, Maharashtra 411030</p>
+                            <a href="https://maps.google.com/?q=Modern+Salon+and+Academy+Dattawadi+Pune" id="location-link" target="_blank" style="color: var(--accent-color); display: inline-block; margin-top: 10px; font-size: 0.9rem;">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-clock contact-icon"></i>
+                        <div class="contact-details">
+                            <h4>Operating Hours</h4>
+                            <p>Open Today · Closes 10:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone contact-icon"></i>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:08080866944" style="color: var(--text-muted); font-size: 1.1rem; display: inline-block;">080808 66944</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container reveal">
+                <iframe 
+                    id="location-map"
+                    src="https://www.google.com/maps?q=Modern+Salon+and+Academy+Dattawadi+Pune+Sarita+Vihar+Phase+2+Rohan+Kritika&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3 style="font-family: var(--font-serif); color: var(--accent-color); font-size: 1.5rem; margin-bottom: 10px;">Modern Salon & Academy</h3>
+            <p>&copy; 2026 Modern Salon & Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
