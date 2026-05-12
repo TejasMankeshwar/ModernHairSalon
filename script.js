@@ -78,27 +78,32 @@ document.addEventListener('DOMContentLoaded', () => {
             'sinhagad': {
                 address: 'Shop No. 4, Sun Universe, Phase 2,<br>Near Manik Baug, Sinhagad Road,<br>Pune, Maharashtra 411041',
                 map: 'https://www.google.com/maps?q=Modern+Hair+Salon+Sinhagad+Road+Pune&output=embed',
-                link: 'https://maps.google.com/?q=Modern+Hair+Salon+Sinhagad+Road+Pune'
+                link: 'https://maps.google.com/?q=Modern+Hair+Salon+Sinhagad+Road+Pune',
+                type: 'Unisex Salon'
             },
             'goelganga': {
                 address: 'Goel Ganga Commercial Complex,<br>Opp. Nanded City Entrance, Sinhagad Road,<br>Pune, Maharashtra 411041',
                 map: 'https://www.google.com/maps?q=Modern+Hair+Salon+Goel+Ganga+Pune&output=embed',
-                link: 'https://maps.google.com/?q=Modern+Hair+Salon+Goel+Ganga+Pune'
+                link: 'https://maps.google.com/?q=Modern+Hair+Salon+Goel+Ganga+Pune',
+                type: 'Unisex Salon'
             },
             'nanded': {
                 address: 'Shop 12, Destination Center,<br>Nanded City, Sinhagad Road,<br>Pune, Maharashtra 411041',
                 map: 'https://www.google.com/maps?q=Modern+Hair+Salon+Nanded+City+Pune&output=embed',
-                link: 'https://maps.google.com/?q=Modern+Hair+Salon+Nanded+City+Pune'
+                link: 'https://maps.google.com/?q=Modern+Hair+Salon+Nanded+City+Pune',
+                type: 'Unisex Salon'
             },
             'dattawadi': {
                 address: 'opp. Rohan Kritika, near Aditya Nakoda Bldg,<br>Sarita Vihar Phase 2, Dattawadi,<br>Pune, Maharashtra 411030',
                 map: 'https://www.google.com/maps?q=Modern+Salon+and+Academy+Dattawadi+Pune+Sarita+Vihar+Phase+2+Rohan+Kritika&output=embed',
-                link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Dattawadi+Pune'
+                link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Dattawadi+Pune',
+                type: "Only Men's Parlour"
             },
             'karvenagar': {
                 address: 'Shop No. 2, Sahawas Society,<br>Opp. Cummins College, Karvenagar,<br>Pune, Maharashtra 411052',
                 map: 'https://www.google.com/maps?q=Modern+Hair+Salon+Karvenagar+Pune&output=embed',
-                link: 'https://maps.google.com/?q=Modern+Hair+Salon+Karvenagar+Pune'
+                link: 'https://maps.google.com/?q=Modern+Hair+Salon+Karvenagar+Pune',
+                type: 'Unisex Salon'
             }
         };
 
@@ -117,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!data) return;
 
             const addressEl = document.getElementById('location-address');
+            const typeEl = document.getElementById('location-type');
             const mapEl = document.getElementById('location-map');
             const linkEl = document.getElementById('location-link');
 
@@ -129,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 addressEl.innerHTML = data.address;
+                typeEl.innerHTML = data.type;
                 mapEl.src = data.map;
                 linkEl.href = data.link;
 
@@ -172,10 +179,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const visitButtons = document.querySelectorAll('.visit-btn');
         visitButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent slide click if any
+                e.stopPropagation();
                 const slide = btn.closest('.carousel-slide');
                 const locationId = slide.getAttribute('data-location');
-                updateLocationSection(locationId);
+                
+                if (locationId === 'sinhagad') {
+                    window.location.href = 'academy.html';
+                } else {
+                    updateLocationSection(locationId);
+                }
                 resetAutoPlay();
             });
         });
