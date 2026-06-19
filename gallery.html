@@ -58,53 +58,69 @@
     <section class="full-gallery">
         <div class="container">
             <div class="gallery-grid">
-                <!-- Placeholder 1 -->
+                <!-- Item 1 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 1</div>
+                    <img src="assets/cut1.jpg" alt="Modern hair styling - style 1">
                 </div>
-                <!-- Placeholder 2 -->
+                <!-- Item 2 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 2</div>
+                    <img src="assets/shop1.jpg" alt="Modern Salon interior - view 1">
                 </div>
-                <!-- Placeholder 3 -->
+                <!-- Item 3 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 3</div>
+                    <img src="assets/cut2.jpg" alt="Modern hair styling - style 2">
                 </div>
-                <!-- Placeholder 4 -->
+                <!-- Item 4 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 4</div>
+                    <img src="assets/cut3.jpg" alt="Modern hair styling - style 3">
                 </div>
-                <!-- Placeholder 5 -->
+                <!-- Item 5 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 5</div>
+                    <img src="assets/shop2.jpg" alt="Modern Salon interior - view 2">
                 </div>
-                <!-- Placeholder 6 -->
+                <!-- Item 6 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 6</div>
+                    <img src="assets/cut4.jpg" alt="Modern hair styling - style 4">
                 </div>
-                <!-- Placeholder 7 -->
+                <!-- Item 7 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 7</div>
+                    <img src="assets/cut5.jpg" alt="Modern hair styling - style 5">
                 </div>
-                <!-- Placeholder 8 -->
+                <!-- Item 8 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 8</div>
+                    <img src="assets/shop3.jpg" alt="Modern Salon interior - view 3">
                 </div>
-                <!-- Placeholder 9 -->
+                <!-- Item 9 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 9</div>
+                    <img src="assets/cut6.jpg" alt="Modern hair styling - style 6">
                 </div>
-                <!-- Placeholder 10 -->
+                <!-- Item 10 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 10</div>
+                    <img src="assets/cut7.jpg" alt="Modern hair styling - style 7">
                 </div>
-                <!-- Placeholder 11 -->
+                <!-- Item 11 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 11</div>
+                    <img src="assets/shop4.jpg" alt="Modern Salon interior - view 4">
                 </div>
-                <!-- Placeholder 12 -->
+                <!-- Item 12 -->
                 <div class="gallery-item reveal">
-                    <div class="placeholder-img">Style 12</div>
+                    <img src="assets/cut8.jpg" alt="Modern hair styling - style 8">
+                </div>
+                <!-- Item 13 -->
+                <div class="gallery-item reveal">
+                    <video src="assets/vid1.mp4" loop muted playsinline autoplay></video>
+                </div>
+                <!-- Item 14 -->
+                <div class="gallery-item reveal">
+                    <img src="assets/cut9.webp" alt="Modern hair styling - style 9">
+                </div>
+                <!-- Item 15 -->
+                <div class="gallery-item reveal">
+                    <video src="assets/vid2.mp4" loop muted playsinline autoplay></video>
+                </div>
+                <!-- Item 16 -->
+                <div class="gallery-item reveal">
+                    <video src="assets/vid3.mp4" loop muted playsinline autoplay></video>
                 </div>
             </div>
             
@@ -121,6 +137,15 @@
             <p>&copy; 2026 Modern Salon & Academy. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <button class="lightbox-close" id="closeLightbox" aria-label="Close media">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged gallery image" style="display: none;">
+        <video class="lightbox-video" id="lightboxVideo" src="" controls autoplay loop muted style="display: none; max-width: 90%; max-height: 85vh; border-radius: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.5); object-fit: contain;"></video>
+    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>

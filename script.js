@@ -76,9 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const locationsData = {
             'sinhagad': {
-                address: 'Shop No. 4, Sun Universe, Phase 2,<br>Near Manik Baug, Sinhagad Road,<br>Pune, Maharashtra 411041',
-                map: 'https://www.google.com/maps?q=Modern+Hair+Salon+Sinhagad+Road+Pune&output=embed',
-                link: 'https://maps.google.com/?q=Modern+Hair+Salon+Sinhagad+Road+Pune',
+                address: 'Opp. Rohan Kritika, Next to Aditya Nakoda Society,<br>Sinhgad Road, Pune - 411030',
+                map: 'https://www.google.com/maps?q=Modern+Salon+and+Academy+Dattawadi+Pune+Sarita+Vihar+Phase+2+Rohan+Kritika&output=embed',
+                link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Dattawadi+Pune',
                 type: 'Unisex Salon'
             },
             'goelganga': {
@@ -207,5 +207,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Handle window resize
         window.addEventListener('resize', updateCarousel);
+    }
+
+    // Lightbox Modal for Gallery Photos
+    const lightbox = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxVideo = document.getElementById('lightboxVideo');
+    const closeLightbox = document.getElementById('closeLightbox');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    if (lightbox && (lightboxImg || lightboxVideo) && closeLightbox && galleryItems.length > 0) {
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                const video = item.querySelector('video');
+                
+                if (img) {
+                    if (lightboxVideo) {
+                        lightboxVideo.style.display = 'none';
+                        lightboxVideo.src = '';
+                    }
+                    if (lightboxImg) {
+                        lightboxImg.src = img.src;
+                        lightboxImg.alt = img.alt;
+                        lightboxImg.style.display = 'block';
+                    }
+                    lightbox.classList.add('active');
+                    document.body.classList.add('modal-open');
+                } else if (video) {
+                    if (lightboxImg) {
+                        lightboxImg.style.display = 'none';
+                        lightboxImg.src = '';
+                    }
+                    if (lightboxVideo) {
+                        lightboxVideo.src = video.src;
+                        lightboxVideo.style.display = 'block';
+                    }
+                    lightbox.classList.add('active');
+                    document.body.classList.add('modal-open');
+                }
+            });
+        });
+
+        const hideLightbox = () => {
+            lightbox.classList.remove('active');
+            document.body.classList.remove('modal-open');
+            if (lightboxImg) {
+                lightboxImg.src = '';
+            }
+            if (lightboxVideo) {
+                lightboxVideo.pause();
+                lightboxVideo.src = '';
+            }
+        };
+
+        closeLightbox.addEventListener('click', hideLightbox);
+
+        // Close on click outside the media
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                hideLightbox();
+            }
+        });
+
+        // Close on Escape key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                hideLightbox();
+            }
+        });
     }
 });

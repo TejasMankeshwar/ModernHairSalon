@@ -47,10 +47,8 @@
             <p>Expert hair styling in a welcoming, luxurious environment in Pune, Maharashtra.</p>
             <div class="hero-btns">
                 <a href="tel:08080866944" class="btn">Book Your Appointment <i class="fa-solid fa-arrow-right"></i></a>
-                <br>
-                <a href="academy.html" class="btn btn-outline" style="margin-top: 15px;">Know more about Academy <i class="fa-solid fa-graduation-cap"></i></a>
-                <br>
-                <a href="services.html" class="btn btn-outline" style="margin-top: 15px;">Specialized Services <i class="fa-solid fa-sparkles"></i></a>
+                <a href="academy.html" class="btn btn-hero-secondary">Know more about Academy <i class="fa-solid fa-graduation-cap"></i></a>
+                <a href="services.html" class="btn btn-hero-secondary">Specialized Services <i class="fa-solid fa-sparkles"></i></a>
             </div>
         </div>
     </section>
@@ -59,7 +57,7 @@
     <section class="about" id="about">
         <div class="container about-grid">
             <div class="about-img-container reveal">
-                <img src="assets/about.png" alt="Professional hair stylist cutting hair" class="about-img">
+                <img src="assets/shop3.jpg" alt="Modern Salon luxury interior" class="about-img">
             </div>
             <div class="about-text reveal">
                 <h2>From Modern Salon & Academy</h2>
@@ -99,7 +97,7 @@
                     <p>We pride ourselves on using top-quality products to bring your hair vision to life. From subtle highlights to full vivid transformations, our certified stylists ensure beautiful, shiny, and healthy results.</p>
                 </div>
                 <div class="about-img-container reveal" style="order: 1;">
-                    <img src="assets/color.png" alt="Hair coloring process in luxury salon" class="about-img">
+                    <img src="assets/cut4.jpg" alt="Creative hair coloring and styling" class="about-img">
                 </div>
             </div>
         </div>
@@ -204,29 +202,29 @@
             </div>
             
             <div class="gallery-grid reveal">
-                <!-- Image 1 Placeholder -->
+                <!-- Image 1 -->
                 <div class="gallery-item">
-                    <div class="placeholder-img">Image 1</div>
+                    <img src="assets/cut1.jpg" alt="Modern hair styling - style 1">
                 </div>
-                <!-- Image 2 Placeholder -->
+                <!-- Image 2 -->
                 <div class="gallery-item">
-                    <div class="placeholder-img">Image 2</div>
+                    <img src="assets/shop1.jpg" alt="Modern Salon interior - view 1">
                 </div>
-                <!-- Image 3 Placeholder -->
+                <!-- Image 3 -->
                 <div class="gallery-item">
-                    <div class="placeholder-img">Image 3</div>
+                    <img src="assets/cut2.jpg" alt="Modern hair styling - style 2">
                 </div>
-                <!-- Image 4 Placeholder -->
+                <!-- Image 4 -->
                 <div class="gallery-item">
-                    <div class="placeholder-img">Image 4</div>
+                    <img src="assets/cut3.jpg" alt="Modern hair styling - style 3">
                 </div>
-                <!-- Image 5 Placeholder -->
+                <!-- Image 5 -->
                 <div class="gallery-item">
-                    <div class="placeholder-img">Image 5</div>
+                    <img src="assets/shop2.jpg" alt="Modern Salon interior - view 2">
                 </div>
-                <!-- Image 6 Placeholder -->
+                <!-- Image 6 -->
                 <div class="gallery-item">
-                    <div class="placeholder-img">Image 6</div>
+                    <img src="assets/cut4.jpg" alt="Modern hair styling - style 4">
                 </div>
             </div>
 
@@ -310,8 +308,8 @@
                         <i class="fa-solid fa-location-dot contact-icon"></i>
                         <div class="contact-details">
                             <h4>Address</h4>
-                            <p id="location-address">Shop No. 4, Sun Universe, Phase 2,<br>Near Manik Baug, Sinhagad Road,<br>Pune, Maharashtra 411041</p>
-                            <a href="https://maps.google.com/?q=Modern+Hair+Salon+Sinhagad+Road+Pune" id="location-link" target="_blank" style="color: var(--accent-color); display: inline-block; margin-top: 10px; font-size: 0.9rem;">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
+                            <p id="location-address">Opp. Rohan Kritika, Next to Aditya Nakoda Society,<br>Sinhgad Road, Pune - 411030</p>
+                            <a href="https://maps.google.com/?q=Modern+Salon+and+Academy+Dattawadi+Pune" id="location-link" target="_blank" style="color: var(--accent-color); display: inline-block; margin-top: 10px; font-size: 0.9rem;">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
 
@@ -336,7 +334,7 @@
             <div class="map-container reveal">
                 <iframe 
                     id="location-map"
-                    src="https://www.google.com/maps?q=Modern+Hair+Salon+Sinhagad+Road+Pune&output=embed" 
+                    src="https://www.google.com/maps?q=Modern+Salon+and+Academy+Dattawadi+Pune+Sarita+Vihar+Phase+2+Rohan+Kritika&output=embed" 
                     allowfullscreen="" 
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade">
@@ -352,6 +350,15 @@
             <p>&copy; 2026 Modern Salon & Academy. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <button class="lightbox-close" id="closeLightbox" aria-label="Close media">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged gallery image" style="display: none;">
+        <video class="lightbox-video" id="lightboxVideo" src="" controls autoplay loop muted style="display: none; max-width: 90%; max-height: 85vh; border-radius: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.5); object-fit: contain;"></video>
+    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>

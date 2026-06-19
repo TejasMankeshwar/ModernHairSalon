@@ -24,28 +24,103 @@
             border-radius: 15px;
             border: 1px solid var(--border-light);
             box-shadow: var(--shadow-soft);
-            transition: all 0.3s ease;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             height: 100%;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .course-card[data-course*="crash"]::before {
+            background: #ff0055;
+        }
+        .course-card:hover::before {
+            transform: scaleX(1);
         }
         .course-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: var(--accent-color);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(188, 138, 95, 0.12);
+        }
+        .course-card[data-course*="crash"]:hover {
+            border-color: #ff0055;
+            box-shadow: 0 20px 40px rgba(255, 0, 85, 0.08);
+        }
+        .course-card-content {
+            flex-grow: 1;
         }
         .course-icon {
             font-size: 2.5rem;
             color: var(--accent-color);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
-        .course-duration {
+        .course-card[data-course*="crash"] .course-icon {
+            color: #ff0055;
+        }
+        .course-tag {
             display: inline-block;
-            background: var(--bg-panel);
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 50px;
             margin-bottom: 15px;
-            color: var(--text-muted);
+        }
+        .tag-diploma {
+            background-color: rgba(188, 138, 95, 0.08);
+            color: var(--accent-color);
+            border: 1px solid rgba(188, 138, 95, 0.2);
+        }
+        .tag-crash {
+            background-color: rgba(255, 0, 85, 0.05);
+            color: #ff0055;
+            border: 1px solid rgba(255, 0, 85, 0.15);
+        }
+        .course-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-family: var(--font-serif);
+            color: var(--text-main);
+        }
+        .course-card-footer {
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            transition: color 0.3s ease;
+        }
+        .course-card[data-course*="crash"] .course-card-footer {
+            color: #ff0055;
+        }
+        .course-card:hover .course-card-footer {
+            color: var(--accent-hover);
+        }
+        .course-card[data-course*="crash"]:hover .course-card-footer {
+            color: #d00045;
+        }
+        .course-card-footer i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        .course-card:hover .course-card-footer i {
+            transform: translateX(5px);
         }
         .courses-grid {
             display: grid;
@@ -64,6 +139,181 @@
         }
         .enroll-section h2 {
             color: #fff;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(10, 10, 10, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-container {
+            background-color: var(--bg-main);
+            width: 90%;
+            max-width: 750px;
+            max-height: 85vh;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow-y: auto;
+            transform: scale(0.92) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .modal-overlay.active .modal-container {
+            transform: scale(1) translateY(0);
+        }
+        .modal-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .modal-container::-webkit-scrollbar-track {
+            background: var(--bg-panel);
+            border-radius: 10px;
+        }
+        .modal-container::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-main);
+            z-index: 10;
+        }
+        .modal-close-btn:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+            transform: rotate(90deg);
+        }
+        .modal-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-light);
+            padding-right: 50px;
+        }
+        .modal-header-title-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .modal-header-icon {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+        }
+        .modal-header h2 {
+            font-size: 2rem;
+            margin: 0;
+            color: var(--text-main);
+        }
+        .modal-body {
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+        .syllabus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px 30px;
+            margin-top: 20px;
+        }
+        .syllabus-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 0;
+        }
+        .syllabus-item i {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        .syllabus-item-text {
+            line-height: 1.5;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .syllabus-section-title {
+            grid-column: 1 / -1;
+            font-family: var(--font-sans);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-top: 15px;
+            margin-bottom: 5px;
+            border-bottom: 1.5px solid rgba(188, 138, 95, 0.2);
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .modal-container[data-is-crash="true"] .syllabus-section-title {
+            color: #ff0055;
+            border-bottom-color: rgba(255, 0, 85, 0.2);
+        }
+        .modal-container[data-is-crash="true"] .syllabus-item i {
+            color: #ff0055;
+        }
+        .kit-box {
+            background-color: var(--bg-panel);
+            border: 1px dashed #ff0055;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .kit-icon {
+            font-size: 2rem;
+            color: #ff0055;
+            animation: pulse 2s infinite;
+        }
+        .kit-details h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ff0055;
+            margin-bottom: 5px;
+            font-family: var(--font-sans);
+        }
+        .kit-details p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+        body.modal-open {
+            overflow: hidden;
         }
     </style>
 </head>
@@ -106,28 +356,88 @@
             </div>
 
             <div class="courses-grid">
-                <!-- Course 1 -->
-                <div class="course-card reveal">
-                    <div class="course-icon"><i class="fa-solid fa-scissors"></i></div>
-                    <span class="course-duration">3 Months</span>
-                    <h3>Foundation in Hair Styling</h3>
-                    <p style="margin-top: 15px; color: var(--text-muted);">Master the basics of hair cutting, texture analysis, and essential styling tools. Perfect for those starting their journey in the hair industry.</p>
+                <!-- Course 1: Hair Dressing -->
+                <div class="course-card reveal" data-course="hair">
+                    <div class="course-card-content">
+                        <span class="course-tag tag-diploma">Diploma Course</span>
+                        <div class="course-icon"><i class="fa-solid fa-scissors"></i></div>
+                        <h3>Diploma in Hair Dressing</h3>
+                        <p style="color: var(--text-muted);">Master foundational and advanced haircutting, chemical treatments, styling, and color theory from industry experts.</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <span>View Syllabus</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
                 </div>
 
-                <!-- Course 2 -->
-                <div class="course-card reveal">
-                    <div class="course-icon"><i class="fa-solid fa-palette"></i></div>
-                    <span class="course-duration">2 Months</span>
-                    <h3>Advanced Color Artistry</h3>
-                    <p style="margin-top: 15px; color: var(--text-muted);">Learn the science of color, balayage techniques, vivid transformations, and color correction from master colorists.</p>
+                <!-- Course 2: Skin & Beauty -->
+                <div class="course-card reveal" data-course="skin">
+                    <div class="course-card-content">
+                        <span class="course-tag tag-diploma">Diploma Course</span>
+                        <div class="course-icon"><i class="fa-solid fa-spa"></i></div>
+                        <h3>Diploma in Skin & Beauty Treatments</h3>
+                        <p style="color: var(--text-muted);">Learn structure and analysis of skin, advanced facials including Hydra Facial, manicure, pedicure, and hygiene standards.</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <span>View Syllabus</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
                 </div>
 
-                <!-- Course 3 -->
-                <div class="course-card reveal">
-                    <div class="course-icon"><i class="fa-solid fa-crown"></i></div>
-                    <span class="course-duration">6 Months</span>
-                    <h3>Master Stylist Diploma</h3>
-                    <p style="margin-top: 15px; color: var(--text-muted);">A comprehensive program covering all aspects of premium hair care, including bridal styling, advanced chemical treatments, and portfolio building.</p>
+                <!-- Course 3: Make Up -->
+                <div class="course-card reveal" data-course="makeup">
+                    <div class="course-card-content">
+                        <span class="course-tag tag-diploma">Diploma Course</span>
+                        <div class="course-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>Diploma in MakeUp</h3>
+                        <p style="color: var(--text-muted);">Comprehensive training in skin prep, foundation matching, contouring, saree draping, and traditional, party, & bridal looks.</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <span>View Syllabus</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Course 4: Nail Artistry -->
+                <div class="course-card reveal" data-course="nail">
+                    <div class="course-card-content">
+                        <span class="course-tag tag-diploma">Diploma Course</span>
+                        <div class="course-icon"><i class="fa-solid fa-gem"></i></div>
+                        <h3>Diploma in Nail Artistry</h3>
+                        <p style="color: var(--text-muted);">Study nail anatomy, extensions application/removal, overlay techniques, and diverse nail art including chrome, foil, & glitter.</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <span>View Syllabus</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Course 5: Female Crash Course -->
+                <div class="course-card reveal" data-course="female_crash">
+                    <div class="course-card-content">
+                        <span class="course-tag tag-crash">Crash Course</span>
+                        <div class="course-icon"><i class="fa-solid fa-person-dress"></i></div>
+                        <h3>Special Crash Course For Female Stylists</h3>
+                        <p style="color: var(--text-muted);">An intensive program covering haircuts, blow-drys, hair spa, threading, waxing, face clean-ups, and self-grooming. Includes a Free Basic Kit!</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <span>View Syllabus</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Course 6: Male Crash Course -->
+                <div class="course-card reveal" data-course="male_crash">
+                    <div class="course-card-content">
+                        <span class="course-tag tag-crash">Crash Course</span>
+                        <div class="course-icon"><i class="fa-solid fa-person"></i></div>
+                        <h3>Special Crash Course For Male Stylists</h3>
+                        <p style="color: var(--text-muted);">Focus on haircuts, shaving, color application, face bleach/d-tan, clean-ups, facials, and career counseling. Includes a Free Basic Kit!</p>
+                    </div>
+                    <div class="course-card-footer">
+                        <span>View Syllabus</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,7 +457,7 @@
                     </ul>
                 </div>
                 <div class="about-img-container reveal">
-                    <img src="assets/about.png" alt="Academy training session" class="about-img">
+                    <img src="assets/shop2.jpg" alt="Academy salon environment training" class="about-img">
                 </div>
             </div>
         </div>
@@ -175,8 +485,8 @@
                         <i class="fa-solid fa-location-dot contact-icon"></i>
                         <div class="contact-details">
                             <h4>Address</h4>
-                            <p id="location-address">Shop No. 4, Sun Universe, Phase 2,<br>Near Manik Baug, Sinhagad Road,<br>Pune, Maharashtra 411041</p>
-                            <a href="https://maps.google.com/?q=Modern+Hair+Salon+Sinhagad+Road+Pune" id="location-link" target="_blank" style="color: var(--accent-color); display: inline-block; margin-top: 10px; font-size: 0.9rem;">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
+                            <p id="location-address">Opp. Rohan Kritika, Next to Aditya Nakoda Society,<br>Sinhgad Road, Pune - 411030</p>
+                            <a href="https://maps.google.com/?q=Modern+Salon+and+Academy+Dattawadi+Pune" id="location-link" target="_blank" style="color: var(--accent-color); display: inline-block; margin-top: 10px; font-size: 0.9rem;">Get Directions <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
 
@@ -201,7 +511,7 @@
             <div class="map-container reveal">
                 <iframe 
                     id="location-map"
-                    src="https://www.google.com/maps?q=Modern+Hair+Salon+Sinhagad+Road+Pune&output=embed" 
+                    src="https://www.google.com/maps?q=Modern+Salon+and+Academy+Dattawadi+Pune+Sarita+Vihar+Phase+2+Rohan+Kritika&output=embed" 
                     allowfullscreen="" 
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade">
@@ -218,7 +528,301 @@
         </div>
     </footer>
 
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="courseModal">
+        <div class="modal-container" id="modalContainer">
+            <button class="modal-close-btn" id="closeModal" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-header">
+                <span class="course-tag tag-diploma" id="modalTag">Diploma Course</span>
+                <div class="modal-header-title-row">
+                    <div class="modal-header-icon" id="modalIcon"><i class="fa-solid fa-scissors"></i></div>
+                    <h2 id="modalTitle">Course Title</h2>
+                </div>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="script.js"></script>
+    <script>
+        const courseSyllabi = {
+            hair: {
+                title: "Diploma in Hair Dressing",
+                icon: "fa-scissors",
+                tag: "Diploma Course",
+                items: [
+                    "About Hair Dressing",
+                    "Science of Hair",
+                    "Knowledge of Tools & Equipments",
+                    "Partitions of hair and sectioning",
+                    "Technique of Shampooing",
+                    "Foundational Haircuts",
+                    "Advance Layer cuts",
+                    "Face Framing",
+                    "Styling",
+                    "Blowdry",
+                    "Chemical Treatments",
+                    "Color Theory",
+                    "Basic and Advance Hair Color",
+                    "Smoothening / Keratin / Botox / Neoplex",
+                    "Perming",
+                    "Hair Spa Treatments",
+                    "Hair Treatments",
+                    "Personal Grooming",
+                    "Client Consultation",
+                    "Personality Development"
+                ]
+            },
+            skin: {
+                title: "Diploma in Skin & Beauty Treatments",
+                icon: "fa-spa",
+                tag: "Diploma Course",
+                items: [
+                    "Skin & Structure Of Skin",
+                    "Skin Analysis",
+                    "Bones of Face & Skull",
+                    "Bleach & D-Tan",
+                    "Basic & Advance Facials",
+                    "Machinery Knowledge",
+                    "Hydra Facial",
+                    "Body Polishing",
+                    "Eyebrow Shaping",
+                    "Types Of Waxing & Masks",
+                    "Nails, Manicure & Pedicure",
+                    "Hygiene & Sterilization",
+                    "Skin & Nutrition",
+                    "Basic MakeUp & Hairstyle"
+                ]
+            },
+            makeup: {
+                title: "Diploma in MakeUp",
+                icon: "fa-wand-magic-sparkles",
+                tag: "Diploma Course",
+                items: [
+                    "Skin Preparation",
+                    "Lens & Lashes Application",
+                    "Eyebrow Shaping & Contouring",
+                    "Types Of Brushes & Choosing Right Foundation",
+                    "Different Eyeshadow & Eyeliner Techniques",
+                    "Application Techniques & Highlighting",
+                    "Product Knowledge & Hair Preparation",
+                    "Hairstyles: Basic Braid, Bun & Messy Styles",
+                    "Open Hair Styles & Many More",
+                    "Saree Draping",
+                    "Party Look & Self Makeup Look",
+                    "Maharashtrian Traditional Look",
+                    "South Indian Look",
+                    "Lehenga Look Bridal"
+                ]
+            },
+            nail: {
+                title: "Diploma in Nail Artistry",
+                icon: "fa-gem",
+                tag: "Diploma Course",
+                items: [
+                    "Nail Anatomy & Nail Preparation",
+                    "Product Knowledge & Gel Polish Application",
+                    "Types of Nail Extensions (Temporary, etc.)",
+                    "Feet Extension Gel Overlay",
+                    "Extension Refilling & Removal of Gel/Nails",
+                    "After Care & Maintenance",
+                    "TYPES OF NAIL ART:",
+                    "• French Nail Art & Free Hand Art",
+                    "• Checks Art & Line Art",
+                    "• Foil Art & Chrome Art",
+                    "• Glitter Art & Rhinestone Art",
+                    "• Mylar Art & Tape Art",
+                    "• Decal Art & Animal Print Art"
+                ]
+            },
+            female_crash: {
+                title: "Special Crash Course For Female Stylists",
+                icon: "fa-person-dress",
+                tag: "Crash Course",
+                isCrash: true,
+                kit: "Scissors, Comb, Thread, Client Apron, Brush, Bowl",
+                hairItems: [
+                    "Basic Haircuts",
+                    "BlowDry",
+                    "Shampoo Hair wash",
+                    "Hair Spa",
+                    "Head Massage",
+                    "Mehendi / Dye Application"
+                ],
+                skinItems: [
+                    "Face Clean Up",
+                    "Manicure / Pedicure",
+                    "Facial",
+                    "Waxing",
+                    "Threading",
+                    "Face Bleach & D-Tan",
+                    "Self Grooming Make Up"
+                ]
+            },
+            male_crash: {
+                title: "Special Crash Course For Male Stylists",
+                icon: "fa-person",
+                tag: "Crash Course",
+                isCrash: true,
+                kit: "Scissors, Comb, Razor, Client Apron, Brush, Bowl",
+                hairItems: [
+                    "Haircuts",
+                    "Shaving",
+                    "Shampoo Hair Wash",
+                    "Hair Spa",
+                    "Head Massage",
+                    "Color Application"
+                ],
+                skinItems: [
+                    "Bleach / D-Tan",
+                    "Clean Up",
+                    "Facial",
+                    "Self Grooming",
+                    "Career Counseling"
+                ]
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('courseModal');
+            const modalContainer = document.getElementById('modalContainer');
+            const modalTag = document.getElementById('modalTag');
+            const modalIcon = document.getElementById('modalIcon');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            const closeModalBtn = document.getElementById('closeModal');
+            const courseCards = document.querySelectorAll('.course-card');
+
+            const openModal = (courseKey) => {
+                const data = courseSyllabi[courseKey];
+                if (!data) return;
+
+                // Set tag
+                modalTag.textContent = data.tag;
+                modalTag.className = `course-tag ${data.isCrash ? 'tag-crash' : 'tag-diploma'}`;
+
+                // Set Icon & Title
+                modalIcon.innerHTML = `<i class="fa-solid ${data.icon}"></i>`;
+                modalTitle.textContent = data.title;
+
+                // Set crash course attribute
+                if (data.isCrash) {
+                    modalContainer.setAttribute('data-is-crash', 'true');
+                } else {
+                    modalContainer.removeAttribute('data-is-crash');
+                }
+
+                // Build Body content
+                let bodyHtml = '';
+
+                if (data.isCrash) {
+                    bodyHtml += `<div class="syllabus-grid">`;
+                    
+                    // Hair section
+                    bodyHtml += `<div>`;
+                    bodyHtml += `<div class="syllabus-section-title">Hair Curriculum</div>`;
+                    data.hairItems.forEach(item => {
+                        bodyHtml += `
+                            <div class="syllabus-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span class="syllabus-item-text">${item}</span>
+                            </div>
+                        `;
+                    });
+                    bodyHtml += `</div>`;
+
+                    // Skin section
+                    bodyHtml += `<div>`;
+                    bodyHtml += `<div class="syllabus-section-title">Skin Curriculum</div>`;
+                    data.skinItems.forEach(item => {
+                        bodyHtml += `
+                            <div class="syllabus-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span class="syllabus-item-text">${item}</span>
+                            </div>
+                        `;
+                    });
+                    bodyHtml += `</div>`;
+
+                    bodyHtml += `</div>`; // end of syllabus-grid
+
+                    // Add Kit Box
+                    bodyHtml += `
+                        <div class="kit-box">
+                            <div class="kit-icon"><i class="fa-solid fa-gift"></i></div>
+                            <div class="kit-details">
+                                <h4>Free Basic Kit Included</h4>
+                                <p>${data.kit}</p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    bodyHtml += `<div class="syllabus-grid">`;
+                    
+                    data.items.forEach(item => {
+                        if (item.endsWith(':')) {
+                            bodyHtml += `<div class="syllabus-section-title">${item}</div>`;
+                        } else if (item.startsWith('•')) {
+                            const cleanText = item.replace('•', '').trim();
+                            bodyHtml += `
+                                <div class="syllabus-item" style="padding-left: 15px;">
+                                    <i class="fa-solid fa-circle-notch" style="font-size: 0.75rem; margin-top: 7px;"></i>
+                                    <span class="syllabus-item-text">${cleanText}</span>
+                                </div>
+                            `;
+                        } else {
+                            bodyHtml += `
+                                <div class="syllabus-item">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span class="syllabus-item-text">${item}</span>
+                                </div>
+                            `;
+                        }
+                    });
+                    
+                    bodyHtml += `</div>`;
+                }
+
+                modalBody.innerHTML = bodyHtml;
+
+                // Show Modal
+                modal.classList.add('active');
+                document.body.classList.add('modal-open');
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            };
+
+            courseCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const courseKey = card.getAttribute('data-course');
+                    openModal(courseKey);
+                });
+            });
+
+            closeModalBtn.addEventListener('click', closeModal);
+
+            // Close on click outside container
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
