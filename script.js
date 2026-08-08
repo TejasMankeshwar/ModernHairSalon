@@ -83,19 +83,19 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             'goelganga': {
                 address: 'Goel Ganga Commercial Complex,<br>Opp. Nanded City Entrance, Sinhagad Road,<br>Pune, Maharashtra 411041',
-                map: 'https://www.google.com/maps?q=Modern+Hair+Salon+Goel+Ganga+Pune&output=embed',
+                map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121097.23400140852!2d73.6715405972656!3d18.47058389999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc29558d242a091%3A0x419f1a3717c979cc!2sModern%20Unisex%20Salon!5e0!3m2!1sen!2sin!4v1786185685125!5m2!1sen!2sin',
                 link: 'https://maps.google.com/?q=Modern+Hair+Salon+Goel+Ganga+Pune',
                 type: 'Unisex Salon'
             },
             'nanded': {
                 address: 'Shop 12, Destination Center,<br>Nanded City, Sinhagad Road,<br>Pune, Maharashtra 411041',
-                map: 'https://www.google.com/maps?q=Modern+Hair+Salon+Nanded+City+Pune&output=embed',
+                map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121097.23400140852!2d73.6715405972656!3d18.47058389999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2959bcd22a711%3A0x5de90f679ca95d40!2sMODERN%20FAMILY%20SALON!5e0!3m2!1sen!2sin!4v1786185769318!5m2!1sen!2sin',
                 link: 'https://maps.google.com/?q=Modern+Hair+Salon+Nanded+City+Pune',
                 type: 'Unisex Salon'
             },
             'dattawadi': {
                 address: 'opp. Rohan Kritika, near Aditya Nakoda Bldg,<br>Sarita Vihar Phase 2, Dattawadi,<br>Pune, Maharashtra 411030',
-                map: 'https://www.google.com/maps?q=Modern+Salon+and+Academy+Dattawadi+Pune+Sarita+Vihar+Phase+2+Rohan+Kritika&output=embed',
+                map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121097.23400140852!2d73.6715405972656!3d18.47058389999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf0af25cbe55%3A0x1e72e946d2213f!2sModern%20Unisex%20Salon!5e0!3m2!1sen!2sin!4v1786185742770!5m2!1sen!2sin',
                 link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Dattawadi+Pune',
                 type: "Only Men's Parlour"
             },
