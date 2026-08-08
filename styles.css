@@ -507,11 +507,11 @@ header.scrolled {
 
 @media (max-width: 768px) {
   .carousel-slide {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
   }
   
   .slide-overlay {
-    padding: 20px;
+    padding: 25px 25px 45px 25px;
   }
   
   .slide-overlay h3 {
@@ -521,6 +521,7 @@ header.scrolled {
   .carousel-btn {
     width: 40px;
     height: 40px;
+    top: 35%;
   }
 }
 
