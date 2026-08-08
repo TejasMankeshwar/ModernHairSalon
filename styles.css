@@ -1052,3 +1052,61 @@ body.modal-open {
   overflow: hidden;
 }
 
+/* --- Mobile Responsiveness Optimizations --- */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+  .contact-card {
+    padding: 25px;
+  }
+  .map-container {
+    min-height: 300px;
+  }
+  .nav-links li {
+    margin: 20px 0;
+    width: 100%;
+  }
+  .nav-links a {
+    display: block;
+    padding: 12px 0;
+  }
+  .slide-overlay p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 50px 0;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  .floating-call-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 1.4rem;
+    bottom: 20px;
+    right: 20px;
+  }
+  .about-text h2, .section-header h2 {
+    font-size: 1.8rem;
+  }
+  .slide-overlay h3 {
+    font-size: 1.3rem;
+  }
+  .slide-tag {
+    font-size: 1.2rem;
+    padding: 20px;
+  }
+}
