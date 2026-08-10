@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,18 +20,20 @@
             background-color: var(--bg-panel);
             text-align: center;
         }
+
         .full-gallery {
             padding: 80px 0;
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header & Navigation -->
     <header class="scrolled">
         <div class="container nav-container">
             <a href="index.html" class="logo">Modern Salon</a>
-            
+
             <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -38,9 +41,10 @@
             <ul class="nav-links">
                 <li><a href="index.html#about">About</a></li>
                 <li class="dropdown">
-                    <a href="index.html#services" class="dropdown-toggle">Services <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; margin-left: 3px;"></i></a>
+                    <a href="index.html#services" class="dropdown-toggle">Services <i class="fa-solid fa-chevron-down"
+                            style="font-size: 0.75rem; margin-left: 3px;"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="index.html#services">Normal Services</a></li>
+                        <li><a href="index.html#services">Regular Services</a></li>
                         <li><a href="services.html">Advanced Services</a></li>
                         <li><a href="academy.html">Know more about the academy</a></li>
                     </ul>
@@ -58,7 +62,8 @@
     <section class="gallery-page-header">
         <div class="container">
             <h1 class="reveal">Our Complete Gallery</h1>
-            <p class="reveal" style="color: var(--text-muted); margin-top: 15px;">Discover our work and get inspired for your next transformation.</p>
+            <p class="reveal" style="color: var(--text-muted); margin-top: 15px;">Discover our work and get inspired for
+                your next transformation.</p>
         </div>
     </section>
 
@@ -131,7 +136,7 @@
                     <video src="assets/vid3.mp4" loop muted playsinline autoplay></video>
                 </div>
             </div>
-            
+
             <div style="text-align: center; margin-top: 60px;">
                 <a href="index.html" class="btn btn-outline">Back to Home</a>
             </div>
@@ -141,7 +146,9 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <h3 style="font-family: var(--font-serif); color: var(--accent-color); font-size: 1.5rem; margin-bottom: 10px;">Modern Salon & Academy</h3>
+            <h3
+                style="font-family: var(--font-serif); color: var(--accent-color); font-size: 1.5rem; margin-bottom: 10px;">
+                Modern Salon & Academy</h3>
             <p>&copy; 2026 Modern Salon & Academy. All rights reserved.</p>
         </div>
     </footer>
@@ -152,10 +159,12 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
         <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged gallery image" style="display: none;">
-        <video class="lightbox-video" id="lightboxVideo" src="" controls autoplay loop muted style="display: none; max-width: 90%; max-height: 85vh; border-radius: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.5); object-fit: contain;"></video>
+        <video class="lightbox-video" id="lightboxVideo" src="" controls autoplay loop muted
+            style="display: none; max-width: 90%; max-height: 85vh; border-radius: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.5); object-fit: contain;"></video>
     </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>
 </body>
+
 </html>
