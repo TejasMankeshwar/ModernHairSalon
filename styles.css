@@ -164,6 +164,69 @@ header.scrolled {
   width: 100%;
 }
 
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  background-color: var(--bg-main);
+  min-width: 260px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  list-style: none;
+  padding: 15px 0;
+  z-index: 1000;
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(15px); /* small gap, let's just make it visible, wait, transform translateY(0) is better */
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(10px);
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu a {
+  padding: 10px 25px;
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu a::after {
+  display: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--bg-panel);
+  color: var(--accent-color);
+  padding-left: 32px;
+}
+
 .mobile-menu-btn {
   display: none;
   font-size: 1.8rem;
