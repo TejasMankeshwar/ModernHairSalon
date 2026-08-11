@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
   --bg-main: #ffffff;
@@ -264,8 +264,8 @@ header.scrolled .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Increased overlay opacity to ensure high text contrast */
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.96)), url('ModernPhotos/FrontLogo.jpeg');
+  /* Very light white overlay to make dark text readable, or dark overlay for white text. Since they want bright, light gradient */
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8)), url('ModernPhotos/FrontLogo.jpeg');
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -278,14 +278,13 @@ header.scrolled .logo {
 }
 
 .hero-tagline {
-  font-family: var(--font-serif);
-  color: var(--accent-color);
-  font-size: 1.15rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  font-family: 'Great Vibes', cursive;
+  color: #8c6239; /* Rich dark gold for high contrast on light overlay */
+  font-size: 2.2rem;
+  text-transform: none;
+  letter-spacing: normal;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
   animation: slideUp 1s ease forwards;
 }
 
