@@ -878,6 +878,120 @@ header.scrolled .logo {
   color: var(--text-muted);
 }
 
+/* Shop Info Section */
+.shop-info {
+  background-color: var(--bg-main);
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.shop-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.shop-details {
+  transition: opacity 0.3s ease;
+}
+
+.est-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.shop-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin: 25px 0 35px 0;
+}
+
+.shop-map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  background: transparent;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.shop-map-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-main);
+}
+
+/* Bento style grid gallery */
+.shop-gallery-container {
+  transition: opacity 0.3s ease;
+}
+
+.shop-gallery {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  height: 420px;
+}
+
+.shop-gallery .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-soft);
+}
+
+.shop-gallery .gallery-item.main-img {
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+}
+
+.shop-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  display: block;
+}
+
+.shop-gallery .gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 991px) {
+  .shop-info-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .shop-gallery {
+    height: 320px;
+  }
+}
+@media (max-width: 576px) {
+  .shop-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px 120px 120px;
+    height: auto;
+  }
+  .shop-gallery .gallery-item.main-img {
+    grid-row: auto;
+    grid-column: auto;
+  }
+}
+
 /* Contact & Info Section */
 .contact {
   background-color: var(--bg-panel);

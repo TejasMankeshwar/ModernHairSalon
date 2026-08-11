@@ -83,7 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Ganesh+Mala+Pune',
                 type: 'Unisex Salon',
                 phone: '9272002036',
-                phoneFormatted: '92720 02036'
+                phoneFormatted: '92720 02036',
+                name: 'Sinhagad Road (Academy)',
+                est: 2024,
+                desc: 'Our premier hair academy and luxury salon flagship.',
+                images: []
             },
             'nanded': {
                 address: 'Shop 12, Destination Center,<br>Nanded City, Sinhagad Road,<br>Pune, Maharashtra 411041',
@@ -91,7 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 link: 'https://maps.google.com/?q=Modern+Hair+Salon+Nanded+City+Pune',
                 type: 'Unisex Salon',
                 phone: '8080866944',
-                phoneFormatted: '80808 66944'
+                phoneFormatted: '80808 66944',
+                name: 'Nanded City',
+                est: 2015,
+                desc: 'A modern salon experience in the heart of Nanded City. Equipped with top-tier amenities and expert stylists, we offer customized hair, skin, and grooming treatments in a relaxed environment.',
+                images: ['ModernPhotos/ShopLocation.jpeg', 'ModernPhotos/Chairs3.jpeg', 'ModernPhotos/Entrance.jpeg']
             },
             'goelganga': {
                 address: 'Goel Ganga Commercial Complex,<br>Opp. Nanded City Entrance, Sinhagad Road,<br>Pune, Maharashtra 411041',
@@ -99,7 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 link: 'https://maps.google.com/?q=Modern+Hair+Salon+Goel+Ganga+Pune',
                 type: 'Unisex Salon',
                 phone: '8080866944',
-                phoneFormatted: '80808 66944'
+                phoneFormatted: '80808 66944',
+                name: 'Goel Ganga',
+                est: 2014,
+                desc: 'Located in the Goel Ganga Commercial Complex, this branch is known for its sophisticated styling and premium personal care. Experience luxury hair care and premium salon treatments by our top-trained professionals.',
+                images: ['ModernPhotos/Chairs2.jpeg', 'ModernPhotos/AdvancedChairs2.jpeg', 'ModernPhotos/products.jpeg']
             },
             'navshya': {
                 address: 'Near Shri Navshya Maruti Mandir, Sinhagad Road,<br>Ganesh Mala, Pune, Maharashtra 411030',
@@ -107,7 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 link: 'https://maps.google.com/?q=Shri+Navshya+Maruti+Mandir+Ganesh+Mala+Pune',
                 type: 'Unisex Salon',
                 phone: '7499280567',
-                phoneFormatted: '74992 80567'
+                phoneFormatted: '74992 80567',
+                name: 'Navshya Maruti',
+                est: 2005,
+                desc: 'Our boutique salon near Shri Navshya Maruti Mandir offers a personalized and peaceful care environment. We specialize in bespoke styling, hair coloring, and rejuvenating hair spa treatments.',
+                images: ['ModernPhotos/Products2.jpeg', 'ModernPhotos/Chairs.jpeg', 'ModernPhotos/AdvnacedChairs.jpeg']
             },
             'ganeshmala': {
                 address: 'opp. Rohan Kritika, near Aditya Nakoda Bldg,<br>Sarita Vihar Phase 2, Ganesh Mala,<br>Pune, Maharashtra 411030',
@@ -115,7 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Ganesh+Mala+Pune',
                 type: "Only Men's Parlour",
                 phone: '9881434380',
-                phoneFormatted: '98814 34380'
+                phoneFormatted: '98814 34380',
+                name: 'Ganesh Mala',
+                est: 1993,
+                desc: 'Our signature flagship experience at Ganesh Mala. Established in 1993, this location is our longest-running flagship Unisex Salon & Men\'s Parlour, setting the benchmark for precision hair styling and luxury care in Pune.',
+                images: ['ModernPhotos/Chairs4.jpeg', 'ModernPhotos/products.jpeg', 'ModernPhotos/Entrance.jpeg']
             }
         };
 
@@ -139,12 +159,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const linkEl = document.getElementById('location-link');
             const phoneEl = document.getElementById('location-phone');
 
+            const shopInfoSec = document.getElementById('shop-info');
+            const shopEstEl = document.getElementById('shop-est');
+            const shopTitleEl = document.getElementById('shop-title');
+            const shopDescEl = document.getElementById('shop-desc');
+            const shopImg1 = document.getElementById('shop-img-1');
+            const shopImg2 = document.getElementById('shop-img-2');
+            const shopImg3 = document.getElementById('shop-img-3');
+
             // Add a fade out/in effect
             const contactSection = document.querySelector('.contact-info');
             const mapContainer = document.querySelector('.map-container');
+            const shopDetailsContainer = document.querySelector('.shop-details');
+            const shopGalleryContainer = document.querySelector('.shop-gallery-container');
 
-            contactSection.style.opacity = '0';
-            mapContainer.style.opacity = '0';
+            if (contactSection) contactSection.style.opacity = '0';
+            if (mapContainer) mapContainer.style.opacity = '0';
+            if (shopDetailsContainer) shopDetailsContainer.style.opacity = '0';
+            if (shopGalleryContainer) shopGalleryContainer.style.opacity = '0';
 
             setTimeout(() => {
                 addressEl.innerHTML = data.address;
@@ -156,12 +188,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     phoneEl.innerHTML = data.phoneFormatted;
                 }
 
-                contactSection.style.opacity = '1';
-                mapContainer.style.opacity = '1';
+                if (shopInfoSec && data.est && locationId !== 'sinhagad') {
+                    shopEstEl.innerHTML = `ESTABLISHED IN ${data.est}`;
+                    shopTitleEl.innerHTML = data.name;
+                    shopDescEl.innerHTML = data.desc;
+                    if (shopImg1 && data.images[0]) shopImg1.src = data.images[0];
+                    if (shopImg2 && data.images[1]) shopImg2.src = data.images[1];
+                    if (shopImg3 && data.images[2]) shopImg3.src = data.images[2];
+                    shopInfoSec.style.display = 'block';
+                } else if (shopInfoSec) {
+                    shopInfoSec.style.display = 'none';
+                }
+
+                if (contactSection) contactSection.style.opacity = '1';
+                if (mapContainer) mapContainer.style.opacity = '1';
+                if (shopDetailsContainer) shopDetailsContainer.style.opacity = '1';
+                if (shopGalleryContainer) shopGalleryContainer.style.opacity = '1';
             }, 300);
 
-            // Scroll to contact section
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            // Scroll to the shop info section or contact section
+            setTimeout(() => {
+                const targetSec = (shopInfoSec && data.est && locationId !== 'sinhagad') ? shopInfoSec : document.getElementById('contact');
+                targetSec.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
         };
 
         const moveToNext = () => {
