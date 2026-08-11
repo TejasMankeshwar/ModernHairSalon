@@ -343,4 +343,60 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Reviews Carousel
+    const reviewsTrack = document.querySelector('.reviews-track');
+    const reviewsPrev = document.getElementById('reviews-prev');
+    const reviewsNext = document.getElementById('reviews-next');
+    const reviewCards = document.querySelectorAll('.review-card');
+
+    if (reviewsTrack && reviewsPrev && reviewsNext && reviewCards.length > 0) {
+        let reviewIndex = 0;
+
+        const getVisibleCardsCount = () => {
+            if (window.innerWidth <= 768) return 1;
+            if (window.innerWidth <= 991) return 2;
+            return 3;
+        };
+
+        const updateReviewsCarousel = () => {
+            const card = reviewCards[0];
+            const cardWidth = card.getBoundingClientRect().width;
+            const gap = parseFloat(window.getComputedStyle(reviewsTrack).gap) || 0;
+            
+            const visibleCards = getVisibleCardsCount();
+            const maxIndex = Math.max(0, reviewCards.length - visibleCards);
+            if (reviewIndex > maxIndex) reviewIndex = maxIndex;
+            if (reviewIndex < 0) reviewIndex = 0;
+
+            reviewsTrack.style.transform = `translateX(-${reviewIndex * (cardWidth + gap)}px)`;
+
+            reviewsPrev.style.opacity = reviewIndex === 0 ? '0.3' : '1';
+            reviewsPrev.style.pointerEvents = reviewIndex === 0 ? 'none' : 'auto';
+            
+            reviewsNext.style.opacity = reviewIndex === maxIndex ? '0.3' : '1';
+            reviewsNext.style.pointerEvents = reviewIndex === maxIndex ? 'none' : 'auto';
+        };
+
+        reviewsNext.addEventListener('click', () => {
+            const visibleCards = getVisibleCardsCount();
+            const maxIndex = Math.max(0, reviewCards.length - visibleCards);
+            if (reviewIndex < maxIndex) {
+                reviewIndex++;
+                updateReviewsCarousel();
+            }
+        });
+
+        reviewsPrev.addEventListener('click', () => {
+            if (reviewIndex > 0) {
+                reviewIndex--;
+                updateReviewsCarousel();
+            }
+        });
+
+        updateReviewsCarousel();
+        window.addEventListener('resize', () => {
+            setTimeout(updateReviewsCarousel, 100);
+        });
+    }
 });

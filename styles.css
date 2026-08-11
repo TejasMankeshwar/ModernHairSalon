@@ -826,24 +826,100 @@ header.scrolled .logo {
   margin-bottom: 15px;
 }
 
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+.reviews-carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 10px 0;
 }
 
-.review-card {
+.reviews-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reviews-track .review-card {
+  flex: 0 0 calc(33.333% - 20px);
   background-color: var(--bg-panel);
   padding: 30px;
   border-radius: 8px;
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-soft);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.review-card:hover {
+.reviews-track .review-card:hover {
   transform: translateY(-5px);
   border-color: var(--accent-color);
+}
+
+.reviews-carousel-btn {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  z-index: 10;
+}
+
+.reviews-carousel-btn:hover {
+  background: var(--accent-color);
+  color: var(--bg-main);
+  border-color: var(--accent-color);
+}
+
+.reviews-carousel-btn.prev-btn {
+  left: -60px;
+}
+
+.reviews-carousel-btn.next-btn {
+  right: -60px;
+}
+
+@media (max-width: 1200px) {
+  .reviews-carousel-btn.prev-btn { left: -15px; }
+  .reviews-carousel-btn.next-btn { right: -15px; }
+}
+
+@media (max-width: 991px) {
+  .reviews-track .review-card {
+    flex: 0 0 calc(50% - 15px);
+  }
+  .reviews-carousel-btn {
+    top: auto;
+    bottom: -60px;
+    transform: none;
+  }
+  .reviews-carousel-btn.prev-btn {
+    left: calc(50% - 55px);
+  }
+  .reviews-carousel-btn.next-btn {
+    right: calc(50% - 55px);
+  }
+  .reviews {
+    padding-bottom: 120px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-track .review-card {
+    flex: 0 0 100%;
+  }
 }
 
 .review-header {
