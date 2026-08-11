@@ -33,13 +33,17 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-serif);
   font-weight: 600;
   color: var(--text-main);
 }
 
-h2, h3 {
+h2,
+h3 {
   color: var(--accent-color);
 }
 
@@ -59,7 +63,8 @@ a:hover {
   background-color: var(--accent-color);
   color: #fff;
   font-weight: 600;
-  border-radius: 50px; /* Fully rounded buttons look more modern */
+  border-radius: 50px;
+  /* Fully rounded buttons look more modern */
   border: none;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -111,13 +116,22 @@ header {
 }
 
 header.scrolled {
-  background-color: var(--bg-glass);
+  background-color: #3A3A3A;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   padding: 18px 0;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: var(--shadow-soft);
 }
+
+header.scrolled .nav-links a {
+  color: #ffffff;
+}
+
+header.scrolled .nav-links a:hover {
+  color: var(--accent-color);
+}
+
 
 .nav-container {
   display: flex;
@@ -173,9 +187,9 @@ header.scrolled {
   position: absolute;
   top: 100%;
   left: -20px;
-  background-color: var(--bg-main);
+  background-color: #3A3A3A;
   min-width: 260px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   opacity: 0;
   visibility: hidden;
@@ -184,16 +198,10 @@ header.scrolled {
   list-style: none;
   padding: 15px 0;
   z-index: 1000;
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   gap: 0;
-}
-
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(15px); /* small gap, let's just make it visible, wait, transform translateY(0) is better */
 }
 
 .dropdown:hover .dropdown-menu {
@@ -210,7 +218,7 @@ header.scrolled {
   padding: 10px 25px;
   display: block;
   font-size: 0.9rem;
-  color: var(--text-main);
+  color: #ffffff;
   font-weight: 500;
   text-transform: none;
   letter-spacing: normal;
@@ -222,7 +230,7 @@ header.scrolled {
 }
 
 .dropdown-menu a:hover {
-  background-color: var(--bg-panel);
+  background-color: rgba(255, 255, 255, 0.05);
   color: var(--accent-color);
   padding-left: 32px;
 }
@@ -409,7 +417,8 @@ header.scrolled {
   width: 100%;
   height: 100%;
   padding: 35px 35px;
-  color: rgba(255, 255, 255, 0.5); /* 50% Transparency */
+  color: rgba(255, 255, 255, 0.5);
+  /* 50% Transparency */
   font-family: 'Poppins', sans-serif;
   font-size: clamp(1.2rem, 4vw, 2.4rem);
   font-weight: 700;
@@ -422,7 +431,7 @@ header.scrolled {
   pointer-events: none;
 
   /* Smooth readability vignette (no solid badge background) */
-  background: radial-gradient(circle at 0% 0%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 30%, transparent 70%);
+  background: radial-gradient(circle at 0% 0%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 30%, transparent 70%);
 }
 
 .slide-overlay {
@@ -431,7 +440,7 @@ header.scrolled {
   left: 0;
   width: 100%;
   padding: 40px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   color: #fff;
   transition: all 0.3s ease;
 }
@@ -478,12 +487,10 @@ header.scrolled {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
   transition: all 0.6s ease;
 }
 
@@ -572,15 +579,15 @@ header.scrolled {
   .carousel-slide {
     aspect-ratio: 1 / 1;
   }
-  
+
   .slide-overlay {
     padding: 25px 25px 45px 25px;
   }
-  
+
   .slide-overlay h3 {
     font-size: 1.5rem;
   }
-  
+
   .carousel-btn {
     width: 40px;
     height: 40px;
@@ -924,6 +931,7 @@ footer p {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -932,14 +940,16 @@ footer p {
 
 /* Mobile Responsiveness */
 @media (max-width: 900px) {
-  .about-grid, .info-grid {
+
+  .about-grid,
+  .info-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .hero h1 {
     font-size: 3rem;
   }
-  
+
   .section-header h2 {
     font-size: 2rem;
   }
@@ -950,9 +960,10 @@ footer p {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px; /* Drawer style looks more premium than full screen */
+    width: 280px;
+    /* Drawer style looks more premium than full screen */
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(54, 69, 79, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
@@ -960,13 +971,13 @@ footer p {
     align-items: flex-start;
     padding: 0 40px;
     transition: right 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
   }
-  
+
   .nav-links.active {
     right: 0;
   }
-  
+
   .nav-links li {
     margin: 15px 0;
     opacity: 0;
@@ -980,21 +991,58 @@ footer p {
   }
 
   /* Staggered animation for menu items */
-  .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
-  .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
-  .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
-  .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
-  .nav-links.active li:nth-child(5) { transition-delay: 0.5s; }
-  
+  .nav-links.active li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .nav-links.active li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .nav-links.active li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .nav-links.active li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+
+  .nav-links.active li:nth-child(5) {
+    transition-delay: 0.5s;
+  }
+
   .nav-links a {
     font-size: 1.1rem;
     font-weight: 600;
+    color: #ffffff;
+  }
+
+  .nav-links .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding: 10px 0 0 15px;
+    background-color: transparent;
+    display: none;
+  }
+
+  .nav-links .dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+
+  .nav-links .dropdown-menu a {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 5px 0;
   }
 
   .mobile-menu-btn {
     display: block;
   }
-  
+
   .hero h1 {
     font-size: 2.8rem;
   }
@@ -1025,9 +1073,20 @@ footer p {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(188, 138, 95, 0.7); }
-  70% { transform: scale(1.08); box-shadow: 0 0 0 20px rgba(188, 138, 95, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(188, 138, 95, 0); }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(188, 138, 95, 0.7);
+  }
+
+  70% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 20px rgba(188, 138, 95, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(188, 138, 95, 0);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1075,6 +1134,7 @@ footer p {
 }
 
 @media (min-width: 768px) {
+
   .lightbox-img,
   .lightbox-video {
     min-width: 600px;
@@ -1121,24 +1181,30 @@ body.modal-open {
   section {
     padding: 60px 0;
   }
+
   .contact-card {
     padding: 25px;
   }
+
   .map-container {
     min-height: 300px;
   }
+
   .nav-links li {
     margin: 20px 0;
     width: 100%;
   }
+
   .nav-links a {
     display: block;
     padding: 12px 0;
   }
+
   .slide-overlay p {
     font-size: 0.95rem;
     margin-bottom: 15px;
   }
+
   .btn {
     padding: 12px 24px;
     font-size: 0.8rem;
@@ -1149,13 +1215,16 @@ body.modal-open {
   section {
     padding: 50px 0;
   }
+
   .hero h1 {
     font-size: 2.2rem;
   }
+
   .hero p {
     font-size: 1rem;
     margin-bottom: 25px;
   }
+
   .floating-call-btn {
     width: 55px;
     height: 55px;
@@ -1163,12 +1232,16 @@ body.modal-open {
     bottom: 20px;
     right: 20px;
   }
-  .about-text h2, .section-header h2 {
+
+  .about-text h2,
+  .section-header h2 {
     font-size: 1.8rem;
   }
+
   .slide-overlay h3 {
     font-size: 1.3rem;
   }
+
   .slide-tag {
     font-size: 1.2rem;
     padding: 20px;
