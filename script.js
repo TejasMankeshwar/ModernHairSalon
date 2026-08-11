@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const locationsData = {
             'sinhagad': {
                 address: 'Opp. Rohan Kritika, Next to Aditya Nakoda Society,<br>Sinhgad Road, Pune - 411030',
-                map: 'https://www.google.com/maps?q=Modern+Salon+and+Academy+Ganesh+Mala+Pune+Sarita+Vihar+Phase+2+Rohan+Kritika&output=embed',
-                link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Ganesh+Mala+Pune',
+                map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121082.40899362125!2d73.68069399726558!3d18.491571699999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf480eda6c3b%3A0xef8305a9d2815baa!2sModern%20Salon%20%26%20Academy!5e0!3m2!1sen!2sin!4v1786448782308!5m2!1sen!2sin',
+                link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Sinhagad+Road+Pune',
                 type: 'Unisex Salon',
                 phone: '9272002036',
                 phoneFormatted: '92720 02036',
