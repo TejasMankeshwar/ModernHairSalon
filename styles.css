@@ -279,7 +279,7 @@ header.scrolled .logo {
 
 .hero-tagline {
   font-family: 'Great Vibes', cursive;
-  color: #8c6239; /* Rich dark gold for high contrast on light overlay */
+  color: var(--text-main); /* Set color to matching grey/charcoal of the nav links */
   font-size: 2.2rem;
   text-transform: none;
   letter-spacing: normal;
