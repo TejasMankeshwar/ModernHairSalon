@@ -365,6 +365,70 @@ header.scrolled .nav-links a:hover {
   color: var(--accent-color);
 }
 
+/* Founder's Message Section */
+.founder-section {
+  background-color: var(--bg-main);
+  padding: 100px 0;
+  text-align: center;
+  border-top: 1px solid var(--border-light);
+}
+
+.founder-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.founder-quote-wrapper {
+  position: relative;
+  padding: 0 40px;
+}
+
+.founder-quote-wrapper .quote-icon {
+  font-size: 3rem;
+  color: var(--accent-color);
+  opacity: 0.15;
+  margin-bottom: 25px;
+  display: block;
+}
+
+.founder-quote {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  line-height: 1.7;
+  color: var(--text-main);
+  font-style: italic;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.founder-meta {
+  display: inline-block;
+}
+
+.founder-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+
+.founder-credentials {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.founder-title {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* Services */
 .services {
   background-color: var(--bg-panel);
