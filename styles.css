@@ -1074,6 +1074,7 @@ header.scrolled .logo {
   border-radius: 8px;
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-soft);
+  aspect-ratio: auto;
 }
 
 .shop-gallery .gallery-item.main-img {
@@ -1105,8 +1106,9 @@ header.scrolled .logo {
 @media (max-width: 576px) {
   .shop-gallery {
     grid-template-columns: 1fr;
-    grid-template-rows: 180px 120px 120px;
+    grid-template-rows: 240px 160px 160px;
     height: auto;
+    gap: 20px;
   }
   .shop-gallery .gallery-item.main-img {
     grid-row: auto;
