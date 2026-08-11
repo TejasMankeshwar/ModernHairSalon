@@ -85,13 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 phone: '9272002036',
                 phoneFormatted: '92720 02036'
             },
-            'navshya': {
-                address: 'Near Shri Navshya Maruti Mandir, Sinhagad Road,<br>Ganesh Mala, Pune, Maharashtra 411030',
-                map: 'https://maps.google.com/maps?q=Shri+Navshya+Maruti+Mandir+Ganesh+Mala+Pune&output=embed',
-                link: 'https://maps.google.com/?q=Shri+Navshya+Maruti+Mandir+Ganesh+Mala+Pune',
+            'nanded': {
+                address: 'Shop 12, Destination Center,<br>Nanded City, Sinhagad Road,<br>Pune, Maharashtra 411041',
+                map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121097.23400140852!2d73.6715405972656!3d18.47058389999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2959bcd22a711%3A0x5de90f679ca95d40!2sMODERN%20FAMILY%20SALON!5e0!3m2!1sen!2sin!4v1786185769318!5m2!1sen!2sin',
+                link: 'https://maps.google.com/?q=Modern+Hair+Salon+Nanded+City+Pune',
                 type: 'Unisex Salon',
-                phone: '7499280567',
-                phoneFormatted: '74992 80567'
+                phone: '8080866944',
+                phoneFormatted: '80808 66944'
             },
             'goelganga': {
                 address: 'Goel Ganga Commercial Complex,<br>Opp. Nanded City Entrance, Sinhagad Road,<br>Pune, Maharashtra 411041',
@@ -101,13 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 phone: '8080866944',
                 phoneFormatted: '80808 66944'
             },
-            'nanded': {
-                address: 'Shop 12, Destination Center,<br>Nanded City, Sinhagad Road,<br>Pune, Maharashtra 411041',
-                map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121097.23400140852!2d73.6715405972656!3d18.47058389999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2959bcd22a711%3A0x5de90f679ca95d40!2sMODERN%20FAMILY%20SALON!5e0!3m2!1sen!2sin!4v1786185769318!5m2!1sen!2sin',
-                link: 'https://maps.google.com/?q=Modern+Hair+Salon+Nanded+City+Pune',
+            'navshya': {
+                address: 'Near Shri Navshya Maruti Mandir, Sinhagad Road,<br>Ganesh Mala, Pune, Maharashtra 411030',
+                map: 'https://maps.google.com/maps?q=Shri+Navshya+Maruti+Mandir+Ganesh+Mala+Pune&output=embed',
+                link: 'https://maps.google.com/?q=Shri+Navshya+Maruti+Mandir+Ganesh+Mala+Pune',
                 type: 'Unisex Salon',
-                phone: '8080866944',
-                phoneFormatted: '80808 66944'
+                phone: '7499280567',
+                phoneFormatted: '74992 80567'
             },
             'ganeshmala': {
                 address: 'opp. Rohan Kritika, near Aditya Nakoda Bldg,<br>Sarita Vihar Phase 2, Ganesh Mala,<br>Pune, Maharashtra 411030',
