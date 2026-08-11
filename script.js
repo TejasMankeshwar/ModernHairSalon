@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 images: ['ModernPhotos/Products2.jpeg', 'ModernPhotos/Chairs.jpeg', 'ModernPhotos/AdvnacedChairs.jpeg']
             },
             'ganeshmala': {
-                address: 'opp. Rohan Kritika, near Aditya Nakoda Bldg,<br>Sarita Vihar Phase 2, Ganesh Mala,<br>Pune, Maharashtra 411030',
+                address: 'Shop No. 4, Omkar Housing Society,<br>Ganesh Mala, Panmala, Dattawadi,<br>Pune, Maharashtra 411030',
                 map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15135.060293767245!2d73.82181206221519!3d18.49429756621522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bff6880a67e9%3A0x612d9fa123e6f0f!2sNEW%20MODERN%20HAIR%20DRESSERS!5e0!3m2!1sen!2sin!4v1786451987101!5m2!1sen!2sin',
                 link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Ganesh+Mala+Pune',
                 type: "Only Men's Parlour",
