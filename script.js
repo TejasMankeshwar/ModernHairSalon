@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             'ganeshmala': {
                 address: 'opp. Rohan Kritika, near Aditya Nakoda Bldg,<br>Sarita Vihar Phase 2, Ganesh Mala,<br>Pune, Maharashtra 411030',
-                map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60538.37220408265!2d73.77250286172479!3d18.499584999999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf0af25cbe55%3A0x1e72e946d2213f!2sModern%20Unisex%20Salon!5e0!3m2!1sen!2sin!4v1786451567499!5m2!1sen!2sin',
+                map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15135.060293767245!2d73.82181206221519!3d18.49429756621522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bff6880a67e9%3A0x612d9fa123e6f0f!2sNEW%20MODERN%20HAIR%20DRESSERS!5e0!3m2!1sen!2sin!4v1786451987101!5m2!1sen!2sin',
                 link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Ganesh+Mala+Pune',
                 type: "Only Men's Parlour",
                 phone: '9881434380',
