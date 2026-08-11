@@ -149,6 +149,9 @@ header.scrolled .logo {
   color: #212121;
   letter-spacing: -0.5px;
   transition: color 0.3s ease;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 2px;
+  display: inline-block;
 }
 
 .nav-links {
