@@ -1340,6 +1340,30 @@ footer p {
   min-width: 280px;
 }
 
+.instagram-btn {
+  margin-top: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 1px solid var(--accent-color);
+  padding: 8px 18px;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.instagram-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-main) !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
 @media (min-width: 768px) {
 
   .lightbox-img,
