@@ -277,6 +277,18 @@ header.scrolled .logo {
   z-index: 10;
 }
 
+.hero-tagline {
+  font-family: var(--font-serif);
+  color: var(--accent-color);
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 12px;
+  animation: slideUp 1s ease forwards;
+}
+
 .hero h1 {
   font-size: 4.5rem;
   margin-bottom: 20px;
