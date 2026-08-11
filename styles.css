@@ -132,6 +132,9 @@ header.scrolled .nav-links a:hover {
   color: var(--accent-color);
 }
 
+header.scrolled .logo {
+  color: var(--accent-color);
+}
 
 .nav-container {
   display: flex;
@@ -143,8 +146,9 @@ header.scrolled .nav-links a:hover {
   font-family: var(--font-serif);
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--accent-color);
+  color: #212121;
   letter-spacing: -0.5px;
+  transition: color 0.3s ease;
 }
 
 .nav-links {
