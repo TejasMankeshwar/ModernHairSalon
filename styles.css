@@ -116,7 +116,7 @@ header {
 }
 
 header.scrolled {
-  background-color: #3A3A3A;
+  background-color: #212121;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   padding: 18px 0;
@@ -187,7 +187,7 @@ header.scrolled .nav-links a:hover {
   position: absolute;
   top: 100%;
   left: -20px;
-  background-color: #3A3A3A;
+  background-color: #212121;
   min-width: 260px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
