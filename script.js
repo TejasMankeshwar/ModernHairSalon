@@ -10,92 +10,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Modern Mobile Drawer Navigation
-    const drawer = document.getElementById('drawer');
-    const openBtn = document.getElementById('drawer-open');
+    // Mobile Navigation Toggle
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
     
-    if (drawer && openBtn) {
-        const scroller = drawer.querySelector('.Drawer-scroller');
-        const sheet = drawer.querySelector('.Drawer-sheet');
-        const icon = openBtn.querySelector('i');
-
-        async function openDrawer() {
-            drawer.showPopover();
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-
-            if (!CSS.supports('scroll-initial-target', 'nearest')) {
-                scroller.scrollTo({left: 0, behavior: 'instant'});
-                await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-            }
-            scroller.scrollTo({left: scroller.offsetWidth, behavior: 'auto'});
-        }
-
-        function closeDrawer() {
-            scroller.scrollTo({left: 0, behavior: 'auto'});
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-
-        function onDrawerOpened() {
-            const main = document.querySelector('main');
-            if(main) main.inert = true;
-            openBtn.setAttribute('aria-expanded', 'true');
-            sheet.focus();
-        }
-
-        function onDrawerClosed() {
-            drawer.hidePopover();
-            const main = document.querySelector('main');
-            if(main) main.inert = false;
-            openBtn.setAttribute('aria-expanded', 'false');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-
-        const visibleThreshold = 1 / window.innerWidth;
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const entry = entries.at(-1);
-                if (entry.intersectionRatio < visibleThreshold) onDrawerClosed();
-                if (entry.intersectionRatio === 1) onDrawerOpened();
-            },
-            {root: drawer, threshold: [visibleThreshold, 1]}
-        );
-        if(sheet) observer.observe(sheet);
-
-        openBtn.addEventListener('click', () => {
-            if (openBtn.getAttribute('aria-expanded') === 'true') {
-                closeDrawer();
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
+            const icon = menuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
             } else {
-                openDrawer();
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
         });
 
-        drawer.addEventListener('click', (event) => {
-            if (!sheet.contains(event.target)) closeDrawer();
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && openBtn.getAttribute('aria-expanded') === 'true') {
-                closeDrawer();
-            }
-        });
-        
-        const links = sheet.querySelectorAll('a');
+        // Close menu when clicking a link
+        const links = navLinks.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
-                closeDrawer();
+                navLinks.classList.remove('active');
+                document.body.classList.remove('nav-open');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             });
         });
-
-        if (!CSS.supports('animation-timeline: scroll()')) {
-            scroller.addEventListener('scroll', () => {
-                const ratio = scroller.scrollLeft / sheet.offsetWidth;
-                drawer.style.setProperty('--drawer-backdrop', Math.min(Math.max(ratio, 0), 1));
-            });
-        }
     }
 
     // Scroll Reveal Animation
