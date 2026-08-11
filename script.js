@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             'navshya': {
                 address: 'Near Shri Navshya Maruti Mandir, Sinhagad Road,<br>Ganesh Mala, Pune, Maharashtra 411030',
-                map: 'https://maps.google.com/maps?q=Shri+Navshya+Maruti+Mandir+Ganesh+Mala+Pune&output=embed',
+                map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.7656287853133!2d73.82953688253032!3d18.4942724251163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf0af25cbe55%3A0x1e72e946d2213f!2sModern%20Unisex%20Salon!5e0!3m2!1sen!2sin!4v1786451803818!5m2!1sen!2sin',
                 link: 'https://maps.google.com/?q=Shri+Navshya+Maruti+Mandir+Ganesh+Mala+Pune',
                 type: 'Unisex Salon',
                 phone: '7499280567',
