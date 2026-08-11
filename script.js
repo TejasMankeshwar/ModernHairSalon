@@ -79,16 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const locationsData = {
             'sinhagad': {
                 address: 'Opp. Rohan Kritika, Next to Aditya Nakoda Society,<br>Sinhgad Road, Pune - 411030',
-                map: 'https://www.google.com/maps?q=Modern+Salon+and+Academy+Dattawadi+Pune+Sarita+Vihar+Phase+2+Rohan+Kritika&output=embed',
-                link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Dattawadi+Pune',
+                map: 'https://www.google.com/maps?q=Modern+Salon+and+Academy+Ganesh+Mala+Pune+Sarita+Vihar+Phase+2+Rohan+Kritika&output=embed',
+                link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Ganesh+Mala+Pune',
                 type: 'Unisex Salon',
                 phone: '9272002036',
                 phoneFormatted: '92720 02036'
             },
             'navshya': {
-                address: 'Near Shri Navshya Maruti Mandir, Sinhagad Road,<br>Dattawadi, Pune, Maharashtra 411030',
-                map: 'https://maps.google.com/maps?q=Shri+Navshya+Maruti+Mandir+Dattawadi+Pune&output=embed',
-                link: 'https://maps.google.com/?q=Shri+Navshya+Maruti+Mandir+Dattawadi+Pune',
+                address: 'Near Shri Navshya Maruti Mandir, Sinhagad Road,<br>Ganesh Mala, Pune, Maharashtra 411030',
+                map: 'https://maps.google.com/maps?q=Shri+Navshya+Maruti+Mandir+Ganesh+Mala+Pune&output=embed',
+                link: 'https://maps.google.com/?q=Shri+Navshya+Maruti+Mandir+Ganesh+Mala+Pune',
                 type: 'Unisex Salon',
                 phone: '7499280567',
                 phoneFormatted: '74992 80567'
@@ -109,10 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 phone: '8080866944',
                 phoneFormatted: '80808 66944'
             },
-            'dattawadi': {
-                address: 'opp. Rohan Kritika, near Aditya Nakoda Bldg,<br>Sarita Vihar Phase 2, Dattawadi,<br>Pune, Maharashtra 411030',
+            'ganeshmala': {
+                address: 'opp. Rohan Kritika, near Aditya Nakoda Bldg,<br>Sarita Vihar Phase 2, Ganesh Mala,<br>Pune, Maharashtra 411030',
                 map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121097.23400140852!2d73.6715405972656!3d18.47058389999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf0af25cbe55%3A0x1e72e946d2213f!2sModern%20Unisex%20Salon!5e0!3m2!1sen!2sin!4v1786185742770!5m2!1sen!2sin',
-                link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Dattawadi+Pune',
+                link: 'https://maps.google.com/?q=Modern+Salon+and+Academy+Ganesh+Mala+Pune',
                 type: "Only Men's Parlour",
                 phone: '9881434380',
                 phoneFormatted: '98814 34380'
