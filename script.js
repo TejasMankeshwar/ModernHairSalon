@@ -87,7 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'Sinhagad Road (Academy)',
                 est: 2024,
                 desc: 'Our premier hair academy and luxury salon flagship.',
-                images: []
+                images: [
+                    'ModernPhotos/Academy/WhatsApp Image 2026-08-13 at 12.46.47.jpeg',
+                    'ModernPhotos/Academy/WhatsApp Image 2026-08-13 at 12.46.48.jpeg',
+                    'ModernPhotos/Academy/WhatsApp Image 2026-08-13 at 12.46.49.jpeg'
+                ]
             },
             'nanded': {
                 address: 'Shop 12, Destination Center,<br>Nanded City, Sinhagad Road,<br>Pune, Maharashtra 411041',
