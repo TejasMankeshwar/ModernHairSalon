@@ -1304,11 +1304,21 @@ footer p {
   }
 
   header {
-    background-color: rgba(255, 255, 255, 0.92) !important;
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 20px 0;
+    border-bottom: none;
+    box-shadow: none;
+    transition: all 0.4s ease;
+  }
+
+  header.scrolled {
+    background-color: #212121 !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
     padding: 15px 0 !important;
-    border-bottom: 1px solid var(--border-light) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     box-shadow: var(--shadow-soft) !important;
   }
 
