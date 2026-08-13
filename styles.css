@@ -447,6 +447,40 @@ header.scrolled .logo {
   font-style: italic;
 }
 
+@media (max-width: 768px) {
+  .founder-section {
+    padding: 40px 0;
+  }
+  .founder-quote-wrapper {
+    background-color: var(--bg-panel);
+    padding: 30px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-soft);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .founder-quote-wrapper .quote-icon {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  .founder-quote {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .founder-name {
+    font-size: 1.1rem;
+  }
+  .founder-credentials {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+  .founder-title {
+    font-size: 0.8rem;
+  }
+}
+
 /* Services */
 .services {
   background-color: var(--bg-panel);
